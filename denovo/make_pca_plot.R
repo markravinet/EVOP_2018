@@ -65,7 +65,7 @@ pca <- glPca(myData, nf = naxes, parallel = T)
 myDF <- data.frame(id = myData@ind.names, pop = myData@pop, pca$scores, row.names = NULL)
 
 # write out
-write.csv(myDF, quote = F, row.names = F)
+write.csv(myDF, "./pca_data.csv",quote = F, row.names = F)
 
 # get eigen values
 pve <- (pca$eig/sum(pca$eig))*100
