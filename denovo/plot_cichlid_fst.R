@@ -21,4 +21,6 @@ a <- a + facet_grid(stat~.)
 a
 
 # write it out
-dev.print(pdf, "./fst_plot.pdf", height = 6, width = 8)
+#dev.print(pdf, "./fst_plot.pdf", height = 6, width = 8)
+ggsave("./fst_plot.pdf", a, width = 6, height = 8)
+

@@ -26,7 +26,8 @@ myData_g <- myData %>% select(-ho, -he) %>% gather(key = "stat", value = "value"
 
 # plot data 
 a <- ggplot(myData_g, aes(value, PC1, colour = pop)) + geom_point() + facet_wrap(~stat, scales = "free_x")
-a + theme_light() + theme(legend.position = "bottom")
+a <- a + theme_light() + theme(legend.position = "bottom")
 
-dev.print(pdf, "./pca_corr.pdf", height = 6, width = 8)
+# dev.print(pdf, , height = 6, width = 8)
+ggsave("./pca_corr.pdf", a, width = 6, height = 8)
 
